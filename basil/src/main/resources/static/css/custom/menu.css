@@ -1,0 +1,149 @@
+/*
+@author kengo yoshida
+menuページのスタイルを定義します
+*/
+
+/* コンテナの幅を変更する */
+.container-widthmargin{
+
+    width: 65rem;
+    margin-top: 1rem;
+
+}
+
+/* デジタル時計のスタイルを定義します */
+.degitalwatch{
+
+	display:         inline-block;
+	padding:         0.3em 1em;
+	text-decoration: none;
+	text-align:      center;
+	font-size:       16px;
+	font-weight:     1;
+	border:          solid 2px #D3D3D3;
+	border-radius:   3px;
+    transition:      .4s;
+    margin-bottom:   1rem;
+
+}
+
+/* 打刻ボタンの動作を定義します */
+.dakokubutton{
+
+    width:         11rem;
+    margin-top:    0.5em;
+    margin-bottom: 0.5em;
+
+}
+
+/* テーブルの大きさを決めます */
+.calendar{
+
+    margin-bottom: 1rem;
+
+}
+
+/* カレンダー一マスの大きさを決めます */
+.calendarCell{
+
+    width:          30px;
+    height:         30px;
+    border:         solid 2px #D3D3D3;
+    font-size:      10px;
+
+}
+
+/* 曜日セル */
+.calendarHead{
+
+    vertical-align: center;
+    text-align:     center; 
+
+}
+
+/* それ以外のセル */
+.calendarOther{
+
+    vertical-align: top;
+    text-align:     left; 
+
+}
+
+/* 土曜日のセルのスタイルを定義します */
+.calendarSatDay{
+
+    color: blue;
+
+}
+
+/* 日曜日のセルのスタイルを定義します */
+.calendarSunday{
+
+    color: red;
+
+}
+
+/* 交通費の締め日 */
+.koutuhishime{
+
+    width:          30px;
+    height:         30px;
+    border:         solid 2px #D3D3D3;
+    font-size:      10px;
+    color:          orange;
+    vertical-align: top;
+    text-align:     left; 
+
+
+}
+
+/* 給料日 */
+.kyuryobi{
+
+    width:          30px;
+    height:         30px;
+    border:         solid 2px #D3D3D3;
+    font-size:      10px;
+    color:          green;
+    vertical-align: top;
+    text-align:     left; 
+
+
+}
+
+/* リンクリストの幅を定義します */
+.linklist{
+
+    position: relative;
+    display: block;
+    margin-bottom: -1px;
+    background-color: #fff;
+    width: 13.3em;
+    font-size: 0.9em;
+    height: 2em;
+
+}
+
+/* リンクリストの下マージンを定義します */
+.linklist-margin{
+
+    margin-bottom: 1em;
+
+}
+
+/* 通知領域の下マージンを設定します */
+.infomargin{
+
+    margin-bottom: 2rem;
+
+}
+
+/* メディアオブジェクトの画像サイズを調整しマス */
+.mediaImg{
+
+    width: 1.5em;
+    height: 1.5em;
+
+}
+
+

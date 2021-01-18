@@ -1,0 +1,22 @@
+<div id="header" th:fragment="layout-header" class="p-3">
+    <ul class="nav nav-tabs">
+        <li class="nav-item">
+            <a class="nav-link" href="workArchiveList" th:classappend="${menuStatus.isSelectedWorkArcList()} ? active : ''">作業・実績一覧</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="dailyArchivementList" th:classappend="${menuStatus.isSelectedDaily()} ? active : ''">日別工数</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="monthlyArchivementList" th:classappend="${menuStatus.isSelectedMontjly()} ? active : ''">通算工数</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="workRegist" data-toggle="tab" th:classappend="${menuStatus.isSelectedWorkRegist()} ? active : ''">作業情報登録</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="archivementList" data-toggle="tab" th:classappend="${menuStatus.isSelectedArcref()} ? active : ''">実績照会</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="logout" data-toggle="tab">SignOut</a>
+        </li>
+    </ul>
+</div>

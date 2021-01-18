@@ -1,0 +1,37 @@
+/*
+@author kengo yoshida
+仕事表管理画面の動作を定義します
+*/
+
+.cardBase{
+
+    width: 20em; 
+    margin-bottom: 2em;
+
+}
+
+/* 作業内容のセレクトボタンの幅を調整します */
+.seleceButtonWidth{
+
+    width: 100px;
+
+}
+
+/* 仕事表登画面の下余白を調整する */
+.worktableAdd{
+
+    margin-bottom: 2em;
+
+}
+
+/* 仕事表の幅の設定 */
+.workTable{
+
+    width: 100%;
+    max-width: 100%;
+    margin-bottom: 1rem;
+    background-color: transparent;
+
+}
+
+    

@@ -1,0 +1,41 @@
+/* index.html用のcssファイルです。 */
+
+/* 画面のタイトルの設定 */
+#back {
+  background-color: #EEEEEE; 
+  }
+
+/* 画面のタイトルの設定 */
+#titleLogo {
+  margin-top: 5rem;
+  margin-bottom: 2rem;
+  color: #555555;
+}
+
+/* Oのアニメーションの設定 */
+#title_O {
+  display:inline;
+  transform: translateX(0rem) rotate(-720deg);
+  opacity: 1;
+  animation-name: korogaru;
+  animation-duration: 2s;
+  animation-fill-mode: forwards;  
+}
+@keyframes korogaru {
+  0% {
+    opacity: 0;
+    transform: translateX(20rem)  rotate(0deg);
+  }
+}
+
+/* 入力フォームのタイトルを右寄りにします。 */
+#inputFormTitle {
+  text-align: right;
+}
+
+/* 入力フォームを左寄りにします。 */
+#inputForm {
+  float: left;
+  margin-left: 0rem;
+  margin-bottom: 1rem;
+}

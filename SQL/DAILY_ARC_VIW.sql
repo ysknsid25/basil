@@ -1,0 +1,28 @@
+#“ú•Ê‚Ìì‹ÆH”‚ðŽæ“¾‚·‚é‚½‚ß‚Ìƒrƒ…[
+CREATE VIEW DAILY_ARC_VIW(
+
+	USER_NO,
+	SHIMEI,
+	REGISTED_DAY,
+	WORK_ID,
+	WORK_NO,
+	WORK_NM,
+	FUNCP
+
+)
+AS
+select
+	u.USER_NO,
+	u.SHIMEI,
+  a.REGISTED_YMD,
+	w.WORK_ID,
+  w.WORK_NO,
+  w.WORK_NM,
+  a.FUNCP
+from
+	ACHIEVE_TBL a
+    INNER JOIN WORK_TBL w
+		ON a.WORK_ID = w.WORK_ID
+			and a.USER_NO = w.USER_NO
+	INNER JOIN USER_TBL  u
+		ON w.USER_NO = u.USER_NO;

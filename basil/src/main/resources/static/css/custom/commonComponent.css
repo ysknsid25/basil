@@ -1,0 +1,272 @@
+/* ---- 共通部品のフッターに適用 ---- */
+#footer{
+
+	width: 100%;
+	position: relative;
+	bottom: 0;
+	
+}
+#footer-common {
+	clear:            both;
+	height:           30px;
+	background-color: #EEEEEE;
+	text-align:       center;
+	font-size:        8pt;
+	line-height:      30px;
+}
+
+/* ---- ヘッダーのジャンボトロン。 ---- */
+.jumbotron-headerCustom {
+
+	margin-top: -1.5em;
+	padding:          20px 10px 20px 10px;
+	background-color: #EEEEEE;
+}
+
+/* ---- ヘッダーの見出し文字。 ---- */
+.display-3-headerCustom {
+	font-size:     3rem;
+	font-weight:   100;
+	line-height:   1;
+	text-align:    left;
+	color:         #555555;
+}
+
+/* プロフィール画像のプロパティ */
+.profIMGProperty{
+
+	width:    2.5em;
+	height:   2.5em;
+
+}
+
+/* 通知バッヂの位置 */
+.infoBadge{
+
+	position: relative;
+	top:      -10px;
+	left:     60px;
+
+}
+
+/* ↓テーブルのプロパティを定義します */
+/* テーブル自身の配置 */
+.tableStyle{
+
+    width: 80%;
+    margin: 0 auto;
+    max-width: 350px;
+
+}
+
+/* テーブルのタイトルセルの設定です */
+.titleCol{
+
+    width: 200px;
+    text-align: center;
+    vertical-align: middle;
+
+}
+
+/* テーブルの行の設定です */
+.tableRow{
+
+    height: 50px;
+
+}
+
+/* テーブルのセルの一般設定です */
+.tableCol{
+
+    text-align: left;
+    vertical-align: middle;
+
+}
+
+/* テキストエリアの行設定です */
+.textArea{
+
+    height: 110px;
+
+}
+
+/* サブタイトル行の設定です */
+.subTitleCol{
+
+    width: 70px;
+    text-align: left;
+    vertical-align: middle;
+
+}
+/* ↑テーブルのプロパティを定義します */
+
+/* aリンクの色を変更する */
+a:link   {color:#666666;} /* アクセスしたことないリンク */
+a:visited{color:#666666;} /* アクセスしたことのあるリンク */
+a:hover  {color:#696969;} /* マウスが上に乗っている時のリンク */
+a:active {color:#666666;} /* クリック中 */
+
+.listTable{
+
+	width: 150%;
+	margin-bottom: 1rem;
+	background-color: transparent;
+
+}
+
+/* ページに含まれるテーブルを中央寄せするためのCSSです */
+.deployTableCenter{
+    width: 80%;
+    margin: 0 auto;
+    max-width: 500px;
+}
+
+/* 各種申請ページ下部で使われるボタンテーブルのセル要素の配置を共通設定します */
+#buttonTable{
+
+	text-align: center;
+	vertical-align: middle;
+	margin: 10px 0px 10px 500px;
+		
+}
+
+/* ボタンテーブルのセル配置を共通設定します */
+.buttonTableCol{
+
+	width: 620px;
+	height: 60px;
+	text-align: center;
+	vertical-align: middle;
+
+}
+
+/* ボタンのスタイル設定です */
+.btn-flat-border {
+	display: inline-block;
+	padding: 0.3em 1em;
+	text-decoration: none;
+	font-size: 14px;
+	font-weight:   1;
+	border: solid 2px #D3D3D3;
+	border-radius: 3px;
+	transition: .4s;
+  }
+  
+  /* ホバー時のボタンのスタイル設定です */
+  .btn-flat-border:hover {
+
+	text-decoration: none;
+	background: #D3D3D3;
+  }
+
+  /* 申請ボタンを格納しているセルのスタイルです */
+  #appbutton{
+
+	text-align: right;
+	vertical-align: middle;
+	padding-right: 15px;
+	padding-bottom: 15px;
+
+  }
+
+/* メニューへ戻るボタンを格納しているセルのスタイルです */
+  #returnToMenu{
+
+	text-align: left;
+	vertical-align: middle;
+	padding-left: 15px;
+	padding-bottom: 15px;
+
+  }
+
+/* ボタンの位置を定義します */
+  .btnPlace{
+
+	text-align: center;
+	vertical-align: middle;
+	margin-top: 10px;
+	padding-left: 15px;
+	padding-bottom: 15px;
+
+  }
+
+	/* ページ内切り替えのラジオボタンのスタイルを定義します */
+	.cp_ipradio {
+		width: 90%;
+		margin: 2.5px 2em 2.5px 2em;
+		text-align: center;
+	}
+	.cp_ipradio input[type='radio'] {
+		position: absolute;
+		z-index: -1;
+		opacity: 0;
+	}
+	.cp_ipradio label {
+		position: relative;
+		display: inline-block;
+		margin-right: 30px;
+		padding-right: 10px;
+		padding-left: 35px;
+		cursor: pointer;
+	}
+	.cp_ipradio label::before {
+		position: absolute;
+		z-index: -1;
+		top: 0;
+		left: 0;
+		display: block;
+		width: 24px;
+		height: 24px;
+		content: ' ';
+		border: 2px solid #D3D3D3;
+		border-radius: 4px;
+	}
+	.cp_ipradio input[type='radio'] + label::before {
+		border-radius: 18px;
+	}
+	.cp_ipradio input[type='radio']:checked + label {
+		padding-left: 10px;
+		color: #666666;
+	}
+	.cp_ipradio input[type='radio']:checked + label::before {
+		top: 0;
+		width: 100%;
+		height: 100%;
+		background: #D3D3D3;
+	}
+	/* Transition */
+	.cp_ipradio label, .cp_ipradio label::before {
+		-webkit-transition: 0.25s all ease;
+				transition: 0.25s all ease;
+	}
+	/* ↑ここまで */
+
+/* 区切りの水平線の長さを定義します */
+hr{
+
+	width: 500px;
+
+}
+
+/* デジタル時計のスタイルを定義します */
+.degitalwatch{
+
+	display:         inline-block;
+	padding:         0.3em 1em;
+	text-decoration: none;
+	text-align:      center;
+	font-size:       16px;
+	font-weight:     1;
+	border:          solid 2px #D3D3D3;
+	border-radius:   3px;
+	transition:      .4s;
+
+}
+
+/* 打刻ボタンの動作を定義します */
+.dakokubutton{
+
+	width: 20rem;
+
+}
+

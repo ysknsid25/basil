@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+	<head>
+	    <meta charset="UTF-8"/>
+	    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+	    <link th:href="@{/css/custom/commonComponent.css}" rel="stylesheet"></link>
+	    <link th:href="@{/css/bootstrap.css}" rel="stylesheet"></link>
+	    <link th:href="@{/css/custom/flatpickr/flatpickr.min.css}" rel="stylesheet"></link>
+	    <link th:href="@{/css/custom/flatpickr/airbnb.css}" rel="stylesheet"></link>
+	    <script th:src="@{/js/flatPickr/flatpickr.js}" type="text/javascript"></script>
+	    <script th:src="@{/js/flatPickr/ja.js}" type="text/javascript"></script>
+	    <script th:src="@{/js/FrontEnd/custom/monthlyArcList.js}" type="text/javascript"></script>
+	    <title>月別作業一覧</title>
+	</head>
+	<body>
+		<div th:replace="header::layout-header"></div>
+        <div class="container">
+               	<div style="text-align: right;">
+               		<span th:if="!${arcByWorkNoInfoSize == 0}">
+               			<input type="checkBox" id="dispChanger" onChange="dispTotalFuncTable()" />案件別実績一覧を表示する
+           			</span>
+           			<span th:if="!${arcByWorkNoInfoSize == 0}">
+           				<input type="checkBox" id="dispChangerFin" onChange="dispFinFuncTable()" />完了済み作業一覧を表示する
+           			</span>
+              	</div>
+               	<div id="totalTable"  style="display: none">
+                    <h6>○案件別実績一覧</h6>
+                    <table class="table text-center">
+                        <thead>
+                            <th>案件番号</th>
+	                        <th>予定総工数</th>
+                            <th>実績総工数</th>
+                            <th>進捗率</th>
+                        </thead>
+                        <tr th:each="arcByWorkNo: ${arcByWorkNoInfo}">
+	                        <td th:text="${arcByWorkNo.getWorkNo()}"></td>
+	                        <td th:text="${arcByWorkNo.getPlanTotalFuncp()}"></td>
+	                        <td th:text="${arcByWorkNo.getArcTotalFuncp()}"></td>
+	                        <td th:text="${arcByWorkNo.getShintyokuritu()}"></td>
+                        </tr>
+                    </table>
+                    <br/>
+                </div>
+               	<div id="totalFinTable"  style="display: none">
+                    <h6>○完了済み作業一覧</h6>
+                    <table class="table text-center">
+                        <thead>
+                            <th>案件番号</th>
+                            <th>作業名</th>
+                            <th>担当者</th>
+                            <th>予定終了日</th>
+                       	    <th>実績終了日</th>
+	                        <th>予定総工数</th>
+                            <th>実績総工数</th>
+                            <th>進捗率</th>
+                        </thead>
+                        <tr th:each="finishedWork: ${finishedWorkInfo}">
+                        	<td th:text="${finishedWork.getWorkNo()}"></td>
+	                        <td th:text="${finishedWork.getWorkNm()}"></td>
+	                        <td th:text="${finishedWork.getTantosha()}"></td>
+	                        <td th:text="${finishedWork.getPlanEndYmd()}"></td>
+	                        <td th:text="${finishedWork.getEndYmd()}"></td>
+	                        <td th:text="${finishedWork.getPlanTotalFuncp()}"></td>
+	                        <td th:text="${finishedWork.getArcTotalFuncp()}"></td>
+	                        <td th:text="${finishedWork.getShintyokuritu()}"></td>
+                        </tr>
+                    </table>
+                    <br/>
+               </div>
+            <form method="POST" name="monthlyArcTbl" action="monthlyArchivementList">
+                <h6>○月別実績一覧</h6>
+                <div style="text-align: center; margin-bottom: 1rem;">
+					<select name="year" th:with="thisYear=${thisYear}, lastYear=${thisYear}-1, nextYear = ${thisYear} + 1">
+						<option th:value="${lastYear}" th:selected="${lastYear == selectedYear}" th:text="${lastYear}"></option>
+						<option th:value="${thisYear}" th:selected="${thisYear == selectedYear}" th:text="${thisYear}"></option>
+						<option th:value="${nextYear}" th:selected="${nextYear == selectedYear}" th:text="${nextYear}"></option>
+					</select>
+					年
+					<select name="month">
+						<option value="01" th:selected="${selectedMobth == '01'}">1</option>
+						<option value="02" th:selected="${selectedMobth == '02'}">2</option>
+						<option value="03" th:selected="${selectedMobth == '03'}">3</option>
+						<option value="04" th:selected="${selectedMobth == '04'}">4</option>
+						<option value="05" th:selected="${selectedMobth == '05'}">5</option>
+						<option value="06" th:selected="${selectedMobth == '06'}">6</option>
+						<option value="07" th:selected="${selectedMobth == '07'}">7</option>
+						<option value="08" th:selected="${selectedMobth == '08'}">8</option>
+						<option value="09" th:selected="${selectedMobth == '09'}">9</option>
+						<option value="10" th:selected="${selectedMobth == '10'}">10</option>
+						<option value="11" th:selected="${selectedMobth == '11'}">11</option>
+						<option value="12" th:selected="${selectedMobth == '12'}">12</option>
+					</select>
+					月
+					<input type="button" value="表示" onClick="document.monthlyArcTbl.submit()"/>
+					<span th:if="${monthlyInfoSize == 0}">
+                    	<br/>
+                    	<br/>
+						<p>登録された工数はありません。</p>
+					</span>
+                </div>
+  	                <div th:if="!${monthlyInfoSize == 0}">
+                    <table class="table text-center">
+                        <thead>
+                            <th>案件番号</th>
+                            <th>作業名</th>
+                            <th>担当者名</th>
+  	                        <th>予定総工数</th>
+                            <th>実績総工数</th>
+                        </thead>
+                        <tr th:each="monthlyArc: ${monthlyInfo}">
+                            <td th:text="${monthlyArc.getWorkNo()}"></td>
+                            <td th:text="${monthlyArc.getWorkNm()}"></td>
+                            <td th:text="${monthlyArc.getShimei()}"></td>
+  	                        <td th:text="${monthlyArc.getPlanFuncp()}"></td>
+                            <td th:text="${monthlyArc.getFuncp()}"></td>
+                        </tr>
+                    </table>
+                </div>
+            </form>
+        </div>
+	</body>
+</html>

@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+	<head>
+	    <meta charset="UTF-8"/>
+	    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+	    <link th:href="@{/css/custom/commonComponent.css}" rel="stylesheet"></link>
+	    <link th:href="@{/css/bootstrap.css}" rel="stylesheet"></link>
+  	    <link th:href="@{/css/custom/worktable.css}" rel="stylesheet"></link>
+	    <link th:href="@{/css/custom/flatpickr/flatpickr.min.css}" rel="stylesheet"></link>
+	    <link th:href="@{/css/custom/flatpickr/airbnb.css}" rel="stylesheet"></link>
+	    <script th:src="@{/js/flatPickr/flatpickr.js}" type="text/javascript"></script>
+	    <script th:src="@{/js/flatPickr/ja.js}" type="text/javascript"></script>
+   	    <script th:src="@{/js/FrontEnd/custom/workRegist.js}" type="text/javascript"></script>
+   	    <script th:src="@{/js/FrontEnd/custom/check.js}" type="text/javascript"></script>
+    <title>作業登録</title>
+</head>
+<body th:onload="|finUpdate(${isUpdated})|">
+	<div th:replace="header::layout-header"></div>
+    <br/>
+    <form method="POST" action="doWorkRegist" name="workRegistTbl">
+    	<input type="hidden" name="workId" th:value="${workInfo.getWorkId()}"/>
+    	<input type="hidden" name="updateYMD" th:value="${workInfo.getUpdateYMD()}"/>
+    	<input type="hidden" name="updateHMS" th:value="${workInfo.getUpdateHMS()}"/>
+	    <div id="worktableAdd" class="worktableAdd">
+	        <div class="card cardBase text-center mx-auto">
+	            <div class="card-header">
+	                作業概要
+	            </div>
+	            <div class="card-body">
+	                <ul class="list-group list-group-flush">
+	                    <li class="list-group-item">
+	                        案件番号<br/>
+	                        <input type="text" maxlength="4" name="workNoA" style=" width: 80px" th:value="${workInfo.getWorkNoA()}"/>-<input type="text" maxlength="3" name="workNoB" style=" width: 40px" th:value="${workInfo.getWorkNoB()}"/>
+	                        <input type="hidden" name="workNo" th:value="${workInfo.getWorkNo()}"/>
+	                    </li>
+	                    <li class="list-group-item">
+	                        担当者
+	                        <select name="userNo" class="w-100">
+	                            <option th:each="usrInfo : ${userInfo}" th:value="${usrInfo.getUserNo()}" th:text="${usrInfo.getShimei()}" th:selected="${usrInfo.getUserNo() == workInfo.getUserNo()}"></option>
+	                        </select>
+	                    </li>
+	                    <li class="list-group-item">
+	                        作業名
+	                        <input type="text" maxlength="100" name="workNm" th:value="${workInfo.getWorkNm()}"/>
+	                    </li>
+	                    <li class="list-group-item">
+	                        作業概要
+	                        <textarea maxlength="500" name="overView" th:text="${workInfo.getOverView()}"></textarea>
+	                    </li>
+	                    <li class="list-group-item">
+	                        改修区分
+	                        <select name="customKbn" class="w-100">
+	                            <option value="1" th:selected="${workInfo.getCustomKbn() == '1'}">新規</option>
+	                            <option value="2" th:selected="${workInfo.getCustomKbn() == '2'}">改修</option>
+	                        </select>
+	                    </li>
+	                    <li class="list-group-item">
+	                        開始予定日
+	                        <input type="text" id="beginDay" name="beginYMD" class="w-100" readonly="readonly" th:value="${workInfo.getPlanBeginYMD()}"/>
+	                        <script>
+	                            flatpickr("#beginDay", {locale:"ja"});
+	                        </script>
+	                    </li>
+	                    <li class="list-group-item">
+	                        終了予定日
+	                        <input type="text" id="endDay" name="endYMD" class="w-100" readonly="readonly" th:value="${workInfo.getPlanEndYMD()}"/>
+	                        <script>
+	                            flatpickr("#endDay", {locale:"ja"});
+	                        </script>
+	                    </li>
+	                    <li class="list-group-item">
+	                        予定総工数<br/>
+	                        <input type="text" name="planTotalFuncp" minlength="1" maxlength="5" style=" width: 60px" onChange="calcFuncp()" onBlur="calcFuncp()" th:value="${workInfo.getTotalFuncP()}"/>h
+	                    </li>
+	                    <li class="list-group-item">
+	                        予定調査工数<br/>
+	                        <input type="text" name="planSearchFuncp" minlength="1" maxlength="5" style=" width: 60px" th:value="${workInfo.getSearchFuncp()}"/>h
+	                    </li>
+	                    <li class="list-group-item">
+	                        予定PG工数<br/>
+	                        <input type="text" name="planPGFuncp" minlength="1" maxlength="5" style=" width: 60px" th:value="${workInfo.getPgFuncp()}"/>h
+	                    </li>
+	                    <li class="list-group-item">
+	                        予定PT工数<br/>
+	                        <input type="text" name="planPTFuncp" minlength="1" maxlength="5" style=" width: 60px" th:value="${workInfo.getPtFuncp()}"/>h
+	                    </li>
+	                    <li class="list-group-item">
+	                        予定付帯作業工数<br/>
+	                        <input type="text" name="incidentalFuncp" minlength="1" maxlength="5" style=" width: 60px" th:value="${workInfo.getInicidentalFuncp()}"/>h
+	                    </li>
+	                    <li class="list-group-item" th:if="!${isRegist}">
+	                        <input type="checkbox" name="isDelete" value="1"/> 削除
+	                    </li>
+	                </ul>
+	            </div>
+	            <div class="card-footer">
+	                <div class="btnPlace">
+	                    <a id="registButton" href="#" class="btn-flat-border" onClick="sendData()">登録</a>
+	                </div>
+	            </div>
+	        </div>
+	    </div>
+    </form>
+</body>
+</html>

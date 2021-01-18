@@ -1,0 +1,33 @@
+#çÏã∆èÛë‘ÉrÉÖÅ[
+CREATE VIEW WORK_STATUS_VIW (
+
+WORK_ID,
+USER_NO,
+WORK_NO,
+WORK_NM,
+PLAN_BEGIN_YMD,
+END_BEGIN_YMD,
+BEGIN_YMD,
+END_YMD,
+FINISH_KBN
+
+)
+AS
+select
+	w.WORK_ID,
+    w.USER_NO,
+    w.WORK_NO,
+    w.WORK_NM,
+    w.PLAN_BEGIN_YMD,
+    w.PLAN_END_YMD,
+    a.BEGIN_YMD,
+    a.END_YMD,
+    a.FINISH_KBN
+from
+	WORK_TBL w
+    LEFT JOIN
+    ACHIEVE_DAY_TBL a
+    ON
+    w.WORK_ID = a.WORK_ID
+    and
+    w.USER_NO = a.USER_NO;

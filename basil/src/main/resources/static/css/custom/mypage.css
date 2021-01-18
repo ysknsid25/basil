@@ -1,0 +1,26 @@
+/* @author kengo yoshida
+  アカウント情報画面のスタイルを定義するCSSファイルです。
+*/
+
+/* マイページのコンテナの大きさを定義します */
+.mypagecontainer{
+
+    width:         30rem;
+    margin-bottom: 1rem;
+
+}
+
+/* 画像読み込みフォームのスタイルを定義します */
+.imageForm{
+
+    margin-top: 1rem;
+
+}
+
+/* 画像選択に表示される初期画像のスタイルを定義します */
+.proimg{
+
+    width:  120px;
+    height: 120px;
+
+}

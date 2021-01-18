@@ -1,0 +1,71 @@
+/*
+@author kengo yoshida
+交通費申請画面のスタイルを定義します
+*/
+
+/* コンテナの幅 */
+.container-trans{
+
+    width: 70em;
+    margin-top: 2em;
+    margin-bottom: 1em;
+
+}
+
+/* テーブルの上下余白 */
+.tableMargin{
+
+    margin-top: 3em;
+    margin-bottom: 3em;
+
+}
+
+/* 利用日時の入力フォームを定義します */
+.useDate{
+
+    width: 7em;
+
+}
+
+/* 乗車区間の入力フォームを定義します */
+.BordingArea{
+
+    width: 7em;
+
+}
+
+/* 運賃の入力フォームを定義します */
+.Fare{
+
+    width: 3.5em;
+
+}
+
+/* 交通費テーブルセル内の配置を定義します */
+.transportTableCell {
+
+    text-align: center;
+    vertical-align: center;
+
+}
+
+/* 交通費テーブルの幅を定義します。こちらは広め */
+.transportTableWide{
+
+    width: 20em;
+
+}
+
+/* 交通費テーブルの幅を定義します。こちらは狭め */
+.transportTableTyte{
+
+    width: 10em;
+
+}
+
+/* テーブルのヘッダない文字の配置 */
+.thead{
+
+    text-align: center;
+
+}

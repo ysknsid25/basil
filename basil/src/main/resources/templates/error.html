@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <meta charset="UTF-8"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+        <link th:href="@{/css/custom/commonComponent.css}" rel="stylesheet"></link>
+        <link th:href="@{/css/bootstrap.min.css}" rel="stylesheet"></link>
+        <link th:href="@{/css/custom/index.css}" rel="stylesheet"></link>
+        <title>login</title>
+    </head>
+    <body class="text-center" id="back">
+        <h3 id="titleLogo" class="display-6">異常が発生しました。再度ログインしてください。</h3>
+        <h3 id="titleLogo" class="display-6" th:if="${hadErrorMessage}" th:text="${errMessage}"></h3>
+        <div id="form">
+            <form name="errortbl" method="post" action="logout">
+                <div class="container">
+                    <div class="row">
+                        <div class="col">
+                            <div class="btnPlace">
+                                <a href="#" class="btn-flat-border" onClick="document.errortbl.submit()">ログイン画面へ</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </body>
+</html>

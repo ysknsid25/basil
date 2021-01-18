@@ -1,0 +1,26 @@
+/* @author kengo yoshida
+  勤怠編集画面のスタイルを定義するCSSファイルです。
+*/
+
+/* 編集フォームのデザイン */
+.embossEdit{
+
+    width:         30rem;
+    margin-top:    2em;
+    margin-bottom: 2em;
+
+}
+
+/* 勤務時間の幅 */
+.timepicker{
+
+    width: 4rem;
+
+}
+
+/* テキストエリアの幅 */
+.textarea{
+
+    width: 20rem;
+    
+}

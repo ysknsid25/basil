@@ -1,0 +1,33 @@
+/* @author kengo yoshida
+  旅費申請画面のスタイルを定義するCSSファイルです。
+*/
+
+/* 編集フォームのデザイン */
+.travelEXPEdit{
+
+    width:         40rem;
+    margin-top:    2em;
+    margin-bottom: 2em;
+
+}
+
+/* プロジェクト名の幅 */
+.purpose{
+
+    width: 25rem;
+
+}
+
+/* テキストエリアの幅 */
+.textarea .purpose{
+
+    width: 30rem;
+    
+}
+
+/* プロジェクト期間の下余白 */
+.dateInputForm{
+
+    margin-bottom: 1rem;
+
+}

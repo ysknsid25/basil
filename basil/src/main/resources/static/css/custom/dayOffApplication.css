@@ -1,0 +1,141 @@
+/* 有給区分を選択するラジオボタンのプロパティです */
+.vacationTypeRadio{
+
+    clear: both;
+
+}
+
+/* 有給申請テーブルのタイトルセルの設定です */
+.titleCol{
+
+    width: 200px;
+    text-align: center;
+    vertical-align: middle;
+
+}
+
+/* 有給申請テーブルの行の設定です */
+.vacationTableRow{
+
+    height: 50px;
+
+}
+
+/* 有給申請テーブルのセルの一般設定です */
+.vacationTableCol{
+
+    text-align: left;
+    vertical-align: middle;
+
+}
+
+/* 有給申請テーブルの事後申請理由項目の行設定です */
+.vacationTableRowForReason{
+
+    height: 110px;
+
+}
+
+/* 有給申請テーブルのサブタイトル行の設定です */
+.subTitleCol{
+
+    width: 70px;
+    text-align: left;
+    vertical-align: middle;
+
+}
+/* 休暇申請区分の行設定 */
+.statusSubTitleCol{
+
+    width: 100px;
+    text-align: center;
+    vertical-align: middle;
+
+}
+
+
+/* ステータステーブル自身の設定です */
+#statusTable{
+
+    margin-top: 10px;
+    margin-bottom: 25px;
+
+}
+
+/* 有休申請テーブル自身の設定です */
+#vacationTable{
+
+    margin-top: 20px;
+    margin-bottom: 20px;
+
+}
+
+/* 残り有休数が０の場合のメッセージの表示形式を調整する */
+.errorMessage{
+
+    margin-top: 10px;
+    margin-bottom: 10px;
+    text-align: center;
+    font-size:     20px;
+    font-weight:   0.1;
+    color:         #555555;
+
+
+}
+
+/* メッセージのスタイルを定義します */
+.infoMessage{
+
+    text-align: center;
+    margin-top: 25px;
+    margin-bottom: 0;
+    border-top: solid 1px;
+    border-bottom: solid 1px;
+
+}
+
+/* 有休取得時間の入力フォームの幅を設定します */
+.timeForm{
+
+    width: 60px;
+
+}
+
+/* ラジオボタンのラベルのフォントサイズを調整します */
+.vacationType{
+
+    font-size: 8px;
+
+}
+
+/* 「追加」ボタンのスタイルを設定します */
+.addButton{
+
+    text-align: center;
+    padding-top: 10px;
+    padding-bottom: 10px;
+
+}
+
+/* 申請内容カードを設定します */
+.card-extends{
+    display: inline-block;
+    width: 200px;
+}
+.card-header-extends{
+
+    padding: 2.5px 20px 2.5px 20px;
+    text-align: center;
+
+}
+.card-body-extends{
+
+    padding: 20px 20px 20px 20px;
+    text-align: center;
+
+}
+.title{
+
+    text-decoration:underline;
+
+}
